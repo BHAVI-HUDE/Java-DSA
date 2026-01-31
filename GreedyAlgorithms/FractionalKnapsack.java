@@ -3,6 +3,9 @@ import java.util.*;
 
 public class FractionalKnapsack {
     public static void main(String[] args) {
+        // Fractional Knapsack
+        // Given the weights and values of N items, put these items in a knapsack of
+        // capacity W to get the maximum total value in the knapsack.
         int value [] = {60,100,120};
         int weight [] = {10,20,30};
         int W = 50;

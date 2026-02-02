@@ -62,6 +62,7 @@ public class BinaryTreesB {
                 return;
             }
 
+            //BFS => FIFO => Queue
             Queue<Node> q = new LinkedList<>();
             q.add(root);
             q.add(null);

@@ -72,6 +72,7 @@ public class BST {
             }
 
             //case 3 - both children
+            //Inorder Successor in BST == Left most Node in right Subtree
             Node IS = findInorderSuccessor(root.right);
             root.data = IS.data;
             root.right = delete(root.right, IS.data);

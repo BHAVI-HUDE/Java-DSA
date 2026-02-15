@@ -4,6 +4,18 @@ import java.util.*;
 // whole code is for min heap
 // min heap - parent < child
 // similarly we can create max heap by small changes in this code
+
+// Binary Tree
+// at most 2 children
+
+// Complete Binary Tree
+// CBT is a BT in which all the levels are completely filled except
+// possibly the last one, which is filled from the left to right.
+
+// Heap Order Property
+// Children >= Parent (maxHeap)
+// Children <= Parent (maxHeap)
+
 public class Classroom {
     static class Heap {
         ArrayList<Integer> arr = new ArrayList<>();

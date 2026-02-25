@@ -42,13 +42,19 @@ public class Graph2 {
 
         graph[6].add(new Edge(6,5));
     }
-
-    public static void bfs(ArrayList<Edge> [] graph){ 
+    public static void bfs(ArrayList<Edge>[] graph){
+        boolean vis[] = new boolean[graph.length];
+        for(int i=0; i<graph.length; i++){
+            if(!vis[i]){
+                bfsUtil(graph, vis);
+            }
+        }
+    }
+    public static void bfsUtil(ArrayList<Edge> [] graph, boolean vis[]){ 
         //O(V+E) => if done through adjacency list as done in this case 
         //O(V^2) => if done through adj matrix 
 
         Queue<Integer> q = new LinkedList<>();
-        boolean vis[] = new boolean[graph.length];
         q.add(0); //source = 0
 
         while(!q.isEmpty()){
@@ -65,7 +71,14 @@ public class Graph2 {
         }
     }
 
-    public static void dfs(ArrayList<Edge> [] graph, int curr, boolean vis[]){
+    public static void dfs(ArrayList<Edge> [] graph){
+        boolean vis[] = new boolean[graph.length];
+        for(int i=0; i<graph.length; i++) {
+            dfsUtil(graph, i, vis);
+        }
+    }
+
+    public static void dfsUtil(ArrayList<Edge> [] graph, int curr, boolean vis[]){
         //O(V+E)
         //visit
         System.out.print(curr + " ");
@@ -74,7 +87,7 @@ public class Graph2 {
         for(int i=0; i<graph[curr].size(); i++){
             Edge e = graph[curr].get(i);
             if(!vis[e.dest]){
-                dfs(graph, e.dest, vis);
+                dfsUtil(graph, e.dest, vis);
             }
         }
     }
@@ -94,6 +107,18 @@ public class Graph2 {
         }
         return false;
     }
+
+    // CYCLE DETECTION IN GRAPHS:
+    //     1. UNDIRECTED GRAPH
+    //                         => DFS
+    //                         => BFS
+    //                         => DSU (DISJOINT SET UNION)
+    //     2. DIRECTED GRAPH  
+    //                         => DFS
+    //                         => BFS
+    //                         => TOPOLOGICAL SORT(KAHN'S ALGORITHM)
+
+
 
     public static void main(String [] args){
         int V = 7;

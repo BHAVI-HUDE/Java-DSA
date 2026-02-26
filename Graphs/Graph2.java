@@ -1,5 +1,4 @@
 package Graphs;
-
 import java.util.*;
 
 public class Graph2 {
@@ -51,7 +50,7 @@ public class Graph2 {
         }
     }
     public static void bfsUtil(ArrayList<Edge> [] graph, boolean vis[]){ 
-        //O(V+E) => if done through adjacency list as done in this case 
+        //O(V+E) => if done through adjacency list as done in this case
         //O(V^2) => if done through adj matrix 
 
         Queue<Integer> q = new LinkedList<>();
